@@ -20,12 +20,14 @@ const Statistics = ({good,neutral,bad}) => {
   }
   return (
   <table>
+    <tbody>
     <Statistic text="good" value ={good} />
     <Statistic text="neutral" value ={neutral} />
     <Statistic text="bad" value ={bad} />
     <Statistic text="all" value ={all} />
     <Statistic text="average" value ={((good/all)*1)+((bad/all)*-1)} />
     <Statistic text="positive" value = {(good/all)*100 + "%"} />
+    </tbody>
     </table>)
 }
 
@@ -46,7 +48,6 @@ const App = () => {
   const [bad, setBad] = useState(0)
   const headerFeedback = 'give feedback'
   const headerStatitics = 'statistics'
-  let all = good+neutral+bad
 
   const handleGoodClick = () => {
     setGood(good + 1)
